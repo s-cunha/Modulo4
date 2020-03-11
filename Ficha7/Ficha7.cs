@@ -426,7 +426,18 @@ namespace Ficha7
         #region Exercicio 1.12
         public static void Exercicio1_12()
         {
+            Console.WriteLine("Introduza um caracter");
+            char a = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("Introduza um número.");
+            int n = Convert.ToInt32(Console.ReadLine());
 
+            CriarMatriz(a, n);
+
+        }
+
+        private static void CriarMatriz(char letra, int num)
+        {
+            int i = 0;
         }
 
 
