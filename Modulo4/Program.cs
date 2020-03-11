@@ -7,7 +7,7 @@ namespace Modulo4
     {
         static void Main(string[] args)
         {
-            Ficha7.Ficha7.Exercicio1_11();
+            Ficha7.Ficha7.Exercicio3_2();
         }
     }
 }

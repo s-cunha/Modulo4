@@ -437,11 +437,195 @@ namespace Ficha7
 
         private static void CriarMatriz(char letra, int num)
         {
-            int i = 0;
+            int i;
+            int j;
+
+            for (i = 0; i < num; i++)
+            {
+                for (j = 0; j < num; j++)
+                {
+                    Console.Write(letra+" ");
+                }
+                Console.WriteLine("\n");
+            }
+
         }
 
 
         #endregion
+
+        #region Exercicio 1.13
+
+        public static void Exercicio1_13()
+        {
+            Console.WriteLine("Introduza um caracter");
+            char a = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("Introduza um número.");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Introduza um número.");
+            int m = Convert.ToInt32(Console.ReadLine());
+
+            CriarMatriz2(a, n, m);
+        }
+
+        private static void CriarMatriz2(char letra, int num1, int num2)
+        {
+            int i;
+            int j;
+
+            for (i = 0; i < num2; i++)
+            {
+                for (j = 0; j < num1; j++)
+                {
+                    Console.Write(letra + " ");
+                }
+                Console.WriteLine("\n");
+            }
+        }
+
+
+
+        #endregion
+
+        #region Exercicio 2.1
+
+        public static void Exercicio2_1()
+        {
+
+            
+            Console.WriteLine("Introduz a temperatura.");
+            double temp = Convert.ToDouble(Console.ReadLine());
+            var escala = "";
+
+            while (escala != "C" && escala != "K" && escala != "F")
+            {
+                Console.WriteLine("Em que escala? C, K ou F");
+                escala = Console.ReadLine();
+
+            }
+            switch (escala)
+            {
+                case "C":
+                    Console.WriteLine(temp + "ºC é equivalente a " + (temp + 273.15) + " ºK e " + (temp * (9 / 5) + 32) + "ºF");
+                    break;
+                case "F":
+                    Console.WriteLine(temp + "ºF é equivalente a " + ((temp - 32) * (5 / 9)) + " ºC e " + (temp + 459.67) * (5 / 9) + "ºK");
+                    break;
+                case "K":
+                    Console.WriteLine(temp + "ºK é equivalente a " + (temp - 273.15) + " ºC e " + (temp * (9 / 5) - 459.67) + "ºF");
+                    break;
+            }
+
+        }
+
+
+
+
+        #endregion
+
+        #region Exercicio 2.2
+
+        public static void Exercicio2_2()
+        {
+            Console.WriteLine("Qual é o limite?");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int count;
+            for (count = 0; count < num; count++)
+            {
+                if (count % 2 == 1)
+                {
+                    Console.WriteLine(count);
+                }
+            }
+        }
+
+        #endregion
+
+        #region Exercicio 2.3
+
+        public static void Exercicio2_3()
+        {
+            string caracteres = "";
+            string caracter = "";
+
+            do
+            {
+                Console.WriteLine("Introduz um número, ou enter para terminar");
+                string c = Console.ReadLine();
+                caracter = c;
+                caracteres = caracteres + caracter;
+            }
+            while (caracter != "");
+            {
+                Console.WriteLine(caracteres);
+            }
+        }
+
+
+        #endregion
+
+        #region Exercicio 3.1
+
+        public static void Exercicio3_1()
+        {
+            Console.WriteLine("Introduz um número.");
+            int n = Convert.ToInt32(Console.ReadLine());
+            if (n % 2 == 0)
+            {
+                Console.WriteLine(n*3);
+            }
+            else
+            {
+                Console.WriteLine(n * 2);
+            }
+        }
+
+        #endregion
+
+        #region Exercicio 3.2
+
+        public static void Exercicio3_2()
+        {
+            Console.WriteLine("Qual a dimensão do triangulo?");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int i = 1;
+
+            while (n > 0)
+            {
+                n--;
+                int a = 0;
+                while (a != n)
+                {
+                    Console.Write(" ");
+                    a++;
+                }
+                int b = 0;
+                while (b != i)
+                {
+                    Console.Write("*");
+                    b++;
+                }
+                i += 2;
+                Console.Write("\n");
+            }
+        }
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
