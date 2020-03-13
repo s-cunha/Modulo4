@@ -6,8 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Calculadora\Calculadora.csproj" />
     <ProjectReference Include="..\ficha6\Ficha6.csproj" />
     <ProjectReference Include="..\Ficha7\Ficha7.csproj" />
+    <ProjectReference Include="..\Ficha9\Ficha9.csproj" />
   </ItemGroup>
 
 </Project>
