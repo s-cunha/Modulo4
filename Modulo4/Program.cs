@@ -8,7 +8,7 @@ namespace Modulo4
        
         static void Main(string[] args)
         {
-            Calculadora.Calculadora.FazCalc();
+            Calculadora.Calculadora.ExercicioCalc();
 
         }
     }

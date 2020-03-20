@@ -1,4 +1,6 @@
 ﻿using System;
+using Common;
+using static Common.InputRequest;
 
 namespace Ficha9
 {
@@ -22,6 +24,23 @@ namespace Ficha9
             Console.WriteLine("O resultado do produto é " + a);
         }
         #endregion
+
+        #region exercicio12.1
+
+        public static void CalcularProdutodeTresNumeros()
+        {
+            double total = 1.0;
+            for (int counter=0; counter < 3; counter++)
+            {
+                var currentNumber = RequestDouble("Introduza um número.");
+                total *= currentNumber;
+            }
+            Console.WriteLine($"O total é {total}");
+        }
+
+
+        #endregion
+
 
         #region Exercicio 1.2
 
@@ -48,6 +67,23 @@ namespace Ficha9
 
             Console.WriteLine($"O resultado da soma é {soma} da subtração {subtraçao} da multiplicação {multiplicaçao} e divisão {divisao}");
          
+        }
+
+        #endregion
+
+        #region Exercicio 12.2
+
+        public static void ApresentarOperacoesParaDoisNumeros()
+        {
+            var firstNumber = RequestDouble("Introduza o primeiro número.");
+            var secondNumber = RequestDouble("Introduza o segundo número.");
+
+            Console.WriteLine($"{firstNumber}+{secondNumber}={(firstNumber + secondNumber)}");
+            Console.WriteLine($"{firstNumber}-{secondNumber}={(firstNumber - secondNumber)}");
+            Console.WriteLine($"{firstNumber}*{secondNumber}={(firstNumber * secondNumber)}");
+            Console.WriteLine($"{firstNumber}/{secondNumber}={(firstNumber / secondNumber)}");
+            Console.WriteLine($"{firstNumber}%{secondNumber}={(firstNumber % secondNumber)}");
+
         }
 
         #endregion
@@ -96,6 +132,34 @@ namespace Ficha9
 
 
 
+
+        #endregion
+
+        #region 12.4
+
+        public static void ApresentarNumerosPrimos()
+        {
+            Console.WriteLine("Introduza um número.");
+            var num = int.Parse(Console.ReadLine());
+
+            for(var i = 2; i <= num; i++)
+            {
+                var isPrime = true;
+                for ( var j = 2; j < i; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        isPrime = false;
+                        break; //se determinado numero for falso para aqui, nao volta a ver se é divisivel por outro (ex.6, divisivel por 3 e 2)
+                    }
+                }
+
+                if (isPrime) Console.WriteLine(i + " ");
+            }
+
+
+
+        }
 
         #endregion
 
@@ -155,6 +219,17 @@ namespace Ficha9
         #endregion
 
         #region Exercicio 1.6
+        //Solicitar uma quantidade de itens e distribuí-los entre duas pessoas através das expressões “Um pra mim” e “Um pra ti”
+
+
+
+
+        #endregion
+
+
+
+
+        #region Exercicio 1.16
 
         public static void Exercicio1_6()
         {
@@ -214,6 +289,68 @@ namespace Ficha9
         #endregion
 
 
+        #region Exercicio 12.16
+
+        public static void Ex16()
+        {
+
+            Console.WriteLine("Pense num número.");
+            Console.WriteLine("Precione enter para continuar.");
+            Console.ReadLine();
+            int min = 1;
+            int max = 100;
+            bool numeroCerto = false;
+
+            while (!numeroCerto)
+            {
+                Console.WriteLine();
+                var avg = (int)(Math.Floor((double)(min + max) / 2)); //cast da divisão
+                var intConf = max - min;
+                var keyOk = false;
+
+                if (intConf <2) 
+                {
+                    for(int i = min; i < (max + 1); i++)
+                    {
+                        Console.WriteLine($"É {i}?");
+                        
+                        var key = Console.ReadKey().Key;
+                        if(key==ConsoleKey.Y || key == ConsoleKey.S)
+                        {
+                            numeroCerto = true;
+                            break;
+                        }
+                        Console.WriteLine(" ");
+                    }
+                }
+                if (!numeroCerto)
+                {
+                    while (!keyOk)
+                    {
+                        Console.WriteLine($"O número é inferior a {avg}?");
+                        switch (Console.ReadKey().Key)
+                        {
+                            case ConsoleKey.Y:
+                            case ConsoleKey.S:
+                                keyOk = true;
+                                max = (avg - 1);
+                                break;
+                            case ConsoleKey.N:
+                                keyOk = true;
+                                min = avg;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+                
+            }
+        }
+
+
+
+        #endregion
 
 
     }
