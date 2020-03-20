@@ -335,6 +335,14 @@ namespace Calculadora
             Console.Write(" = ");
             Console.BackgroundColor = ConsoleColor.Gray;
             Console.WriteLine("    ");
+
+            Console.WriteLine("                                   ");
+
+            Console.Write("                       ");
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.Write(" ON/OFF ");
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.WriteLine("    ");
             Console.WriteLine("                                   ");
             Console.ResetColor();
             Console.WriteLine("Introduza o valor de uma das teclas apresentadas ou X para sair.");
@@ -350,13 +358,13 @@ namespace Calculadora
             var num = Console.ReadLine();
             var g = double.TryParse(num, out double a);
 
-            while (num != "X")
+            while (num != "X"&&num!="OFF")
             {
                 Console.Clear();
                 ImagemCalc(Convert.ToString(a));
 
 
-                if (Convert.ToString(a) != "X")
+                if (Convert.ToString(a) != "X"&& Convert.ToString(a) != "OFF")
                 {
                     var op = Console.ReadLine();
                     switch (op)
@@ -369,7 +377,7 @@ namespace Calculadora
                             ImagemCalc(Convert.ToString(a) + "+");
                             var c = Console.ReadLine();
 
-                            if (c != "X")
+                            if (c != "X"&& c != "OFF")
                             {
                                 double.TryParse(c, out double b1);
                                 Console.Clear();
@@ -384,7 +392,7 @@ namespace Calculadora
                             ImagemCalc(Convert.ToString(a) + "-");
                             var c2 = Console.ReadLine();
 
-                            if (c2 != "X")
+                            if (c2 != "X" && c2 != "OFF")
                             {
                                 double.TryParse(c2, out double b1);
                                 Console.Clear();
@@ -399,7 +407,7 @@ namespace Calculadora
                             ImagemCalc(Convert.ToString(a) + "x");
                             var c3 = Console.ReadLine();
 
-                            if (c3 != "X")
+                            if (c3 != "X" && c3 != "OFF")
                             {
                                 double.TryParse(c3, out double b1);
                                 Console.Clear();
@@ -414,7 +422,7 @@ namespace Calculadora
                             ImagemCalc(Convert.ToString(a) + "/");
                             var c4 = Console.ReadLine();
 
-                            if (c4 != "X")
+                            if (c4 != "X" && c4 != "OFF")
                             {
                                 double.TryParse(c4, out double b1);
                                 if (b1 == 0)
@@ -433,7 +441,7 @@ namespace Calculadora
                             ImagemCalc(Convert.ToString(a) + "%");
                             var c5 = Console.ReadLine();
 
-                            if (c5 != "X")
+                            if (c5 != "X" && c5 != "OFF")
                             {
                                 double.TryParse(c5, out double b1);
                                 if (b1 == 0)
