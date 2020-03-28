@@ -353,129 +353,144 @@ namespace Calculadora
         {
 
             ImagemCalc("");
-            
 
+            
             var num = Console.ReadLine();
             var g = double.TryParse(num, out double a);
-
-            while (num != "X"&&num!="OFF")
+            if (num == "ON")
             {
+                a = 0;
                 Console.Clear();
                 ImagemCalc(Convert.ToString(a));
+            }
+
+            while (num != "X" && num != "OFF" && num!="ON")
+            {
+                    Console.Clear();
+                    ImagemCalc(Convert.ToString(a));
 
 
-                if (Convert.ToString(a) != "X"&& Convert.ToString(a) != "OFF")
-                {
-                    var op = Console.ReadLine();
-                    switch (op)
+                    if (Convert.ToString(a) != "X")
                     {
-                        case "X":
+                        var op = Console.ReadLine();
+                        switch (op)
+                        {
+
+                        case "ON":
                             return;
 
-                        case "+":
-                            Console.Clear();
-                            ImagemCalc(Convert.ToString(a) + "+");
-                            var c = Console.ReadLine();
+                        case "OFF":
+                                return;
 
-                            if (c != "X"&& c != "OFF")
-                            {
-                                double.TryParse(c, out double b1);
+                            case "X":
+                                return;
+
+                            case "+":
                                 Console.Clear();
-                                ImagemCalc(Convert.ToString(a) + "+" + Convert.ToString(b1));
-                                a = a + b1;
-                            }
-                            else { return; }
-                            break;
+                                ImagemCalc(Convert.ToString(a) + "+");
+                                var c = Console.ReadLine();
 
-                        case "-":
-                            Console.Clear();
-                            ImagemCalc(Convert.ToString(a) + "-");
-                            var c2 = Console.ReadLine();
-
-                            if (c2 != "X" && c2 != "OFF")
-                            {
-                                double.TryParse(c2, out double b1);
-                                Console.Clear();
-                                ImagemCalc(Convert.ToString(a) + "-" + Convert.ToString(b1));
-                                a = a - b1;
-                            }
-                            else { return; }
-                            break;
-
-                        case "x":
-                            Console.Clear();
-                            ImagemCalc(Convert.ToString(a) + "x");
-                            var c3 = Console.ReadLine();
-
-                            if (c3 != "X" && c3 != "OFF")
-                            {
-                                double.TryParse(c3, out double b1);
-                                Console.Clear();
-                                ImagemCalc(Convert.ToString(a) + "x" + Convert.ToString(b1));
-                                a = a * b1;
-                            }
-                            else { return; }
-                            break;
-
-                        case "/":
-                            Console.Clear();
-                            ImagemCalc(Convert.ToString(a) + "/");
-                            var c4 = Console.ReadLine();
-
-                            if (c4 != "X" && c4 != "OFF")
-                            {
-                                double.TryParse(c4, out double b1);
-                                if (b1 == 0)
+                                if (c != "X" && c != "OFF")
                                 {
-                                    b1 = b1 + 1;
+                                    double.TryParse(c, out double b1);
+                                    Console.Clear();
+                                    ImagemCalc(Convert.ToString(a) + "+" + Convert.ToString(b1));
+                                    a = a + b1;
                                 }
+                                else { return; }
+                                break;
+
+                            case "-":
                                 Console.Clear();
-                                ImagemCalc(Convert.ToString(a) + "/" + Convert.ToString(b1));
-                                a = a / b1;
-                            }
-                            else { return; }
-                            break;
+                                ImagemCalc(Convert.ToString(a) + "-");
+                                var c2 = Console.ReadLine();
 
-                        case "%":
-                            Console.Clear();
-                            ImagemCalc(Convert.ToString(a) + "%");
-                            var c5 = Console.ReadLine();
-
-                            if (c5 != "X" && c5 != "OFF")
-                            {
-                                double.TryParse(c5, out double b1);
-                                if (b1 == 0)
+                                if (c2 != "X" && c2 != "OFF")
                                 {
-                                    b1 = b1 + 1;
+                                    double.TryParse(c2, out double b1);
+                                    Console.Clear();
+                                    ImagemCalc(Convert.ToString(a) + "-" + Convert.ToString(b1));
+                                    a = a - b1;
                                 }
-                                Console.Clear();
-                                ImagemCalc(Convert.ToString(a) + "%" + Convert.ToString(b1));
-                                a = a % b1;
-                            }
-                            else { return; }
-                            break;
+                                else { return; }
+                                break;
 
-                        default:
+                            case "x":
+                                Console.Clear();
+                                ImagemCalc(Convert.ToString(a) + "x");
+                                var c3 = Console.ReadLine();
+
+                                if (c3 != "X" && c3 != "OFF")
+                                {
+                                    double.TryParse(c3, out double b1);
+                                    Console.Clear();
+                                    ImagemCalc(Convert.ToString(a) + "x" + Convert.ToString(b1));
+                                    a = a * b1;
+                                }
+                                else { return; }
+                                break;
+
+                            case "/":
+                                Console.Clear();
+                                ImagemCalc(Convert.ToString(a) + "/");
+                                var c4 = Console.ReadLine();
+
+                                if (c4 != "X" && c4 != "OFF")
+                                {
+                                    double.TryParse(c4, out double b1);
+                                    if (b1 == 0)
+                                    {
+                                        b1 = b1 + 1;
+                                    }
+                                    Console.Clear();
+                                    ImagemCalc(Convert.ToString(a) + "/" + Convert.ToString(b1));
+                                    a = a / b1;
+                                }
+                                else { return; }
+                                break;
+
+                            case "%":
+                                Console.Clear();
+                                ImagemCalc(Convert.ToString(a) + "%");
+                                var c5 = Console.ReadLine();
+
+                                if (c5 != "X" && c5 != "OFF")
+                                {
+                                    double.TryParse(c5, out double b1);
+                                    if (b1 == 0)
+                                    {
+                                        b1 = b1 + 1;
+                                    }
+                                    Console.Clear();
+                                    ImagemCalc(Convert.ToString(a) + "%" + Convert.ToString(b1));
+                                    a = a % b1;
+                                }
+                                else { return; }
+                                break;
+
+                            default:
+
+                                Console.Clear();
+                                ImagemCalc(Convert.ToString(a));
+                                break;
+                        }
+
+                        var igual = Console.ReadLine();
+                        if (igual == "=")
+                        {
 
                             Console.Clear();
                             ImagemCalc(Convert.ToString(a));
-                            break;
-                    }
 
-                    var igual = Console.ReadLine();
-                    if (igual == "=")
-                    {
+                        }
 
-                        Console.Clear();
-                        ImagemCalc(Convert.ToString(a));
+
+
 
                     }
-
 
                 }
-
-
-            }
+            
 
 
 
