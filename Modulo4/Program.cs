@@ -8,7 +8,7 @@ namespace Modulo4
        
         static void Main(string[] args)
         {
-            JogoGalo.JogoGalo.Jogadas();
+            JogoForca.JogoForca.JogarForca();
 
         }
     }
