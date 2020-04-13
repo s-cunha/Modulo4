@@ -104,7 +104,7 @@ namespace JogoForca
 
         }
 
-        public static void JogarForca()
+        public static void StartForca()
         {
             ImagemForca(1);
 

@@ -349,7 +349,7 @@ namespace Calculadora
         }
         #endregion
 
-        public static void ExercicioCalc()
+        public static void StartCalculadora()
         {
 
             ImagemCalc("");
