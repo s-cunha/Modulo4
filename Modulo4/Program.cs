@@ -1,15 +1,14 @@
 ﻿using Ficha6;
 using System;
+using Ficha24;
 
 namespace Modulo4
 {
     class Program
     {
-       
-        static void Main(string[] args)
-        {
-            Calculadora.Calculadora.StartCalculadora();
+        Ficha24.Ficha24.Veiculo
 
-        }
+
     }
 }
+
