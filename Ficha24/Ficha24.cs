@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Ficha24
 {
@@ -13,18 +14,24 @@ namespace Ficha24
         //Identifica e adiciona as propriedades que considerares pertinentes. 
         //Não te esqueças que podem existir valores que não queiras que sejam introduzidos numa propriedade. c. 
         //Identifica e adiciona os métodos que considerares pertinentes.
-        
+
         public class Veiculo
         {
             public Veiculo() { }
-            public Veiculo(string marca,string modelo, int ano)
+            public Veiculo(string marca, string modelo, int ano)
             {
-                this.marca = marca;
+                if(!string.IsNullOrEmpty(marca)) this.marca = marca;
                 this.modelo = modelo;
                 this.ano = ano;
             }
-            
-            
+
+            private bool ligado;
+            public static bool Ligado()
+            {
+                return true;
+            }
+
+
             private string marca;
             public string Marca
             {
@@ -40,19 +47,19 @@ namespace Ficha24
             }
 
             private string modelo;
-            public string Modelo 
+            public string Modelo
             {
-                    get
-                    {
-                        return modelo;
-                    }
-                    set
-                    {
-                        if (!string.IsNullOrEmpty(value)) modelo = value;
-                    }
+                get
+                {
+                    return modelo;
+                }
+                set
+                {
+                    if (!string.IsNullOrEmpty(value)) modelo = value;
+                }
 
             }
-            
+
 
             private int ano;
             public int Ano
@@ -66,10 +73,20 @@ namespace Ficha24
                     if (value > 0) ano = value;
                 }
             }
-            
+
         }
-        
-        
+
+
         #endregion
+
+
+
+
+
     }
+
+
+
+
 }
+

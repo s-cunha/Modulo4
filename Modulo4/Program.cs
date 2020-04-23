@@ -1,13 +1,17 @@
-﻿using Ficha6;
+﻿
 using System;
-using Ficha24;
+using System.Collections.Generic;
 
 namespace Modulo4
 {
     class Program
-    {
-        Ficha24.Ficha24.Veiculo
-
+    {  
+       
+        static void Main (string[] args)
+        {
+            Ficha18.Ficha18.exercicio3 ();
+        }
+        
 
     }
 }
