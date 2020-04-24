@@ -1,6 +1,5 @@
-﻿
+﻿using static Ficha21.ExtensionMethod1;
 using System;
-using System.Collections.Generic;
 
 namespace Modulo4
 {
@@ -9,7 +8,8 @@ namespace Modulo4
        
         static void Main (string[] args)
         {
-            Ficha18.Ficha18.exercicio3 ();
+            Ficha21.Ficha21.exercicio9();
+
         }
         
 
